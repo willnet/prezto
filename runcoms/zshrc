@@ -11,3 +11,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+source "$HOME/zsh/aliases.zsh"
+
+_Z_CMD=j
+source `brew --prefix`/etc/profile.d/z.sh
+
+if [ -f ~/zsh/zaw/zaw.zsh ]; then
+  source ~/zsh/zaw/zaw.zsh
+  bindkey '^R' zaw-history
+fi
